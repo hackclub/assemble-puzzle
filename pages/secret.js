@@ -38,6 +38,7 @@ export default function Secret({ jwt }) {
           autoPlay
           loop
           controls={false}
+          muted
           id="myVideo"
           style={{
             height: "100vh",
