@@ -1,0 +1,68 @@
+html,
+body {
+  background: #ede8e4;
+
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#text-container {
+  color: #141312;
+  font-size: 1.7rem;
+  font-family: "Libre Baskerville", serif;
+}
+
+img {
+  width: 100%;
+  border-radius: 2px;
+  border: 2px solid #1c1716;
+  box-shadow: 5px 5px 41px 11px rgba(0, 0, 0, 0.4);
+}
+
+figure {
+  margin: 0 0 3vh;
+}
+
+figure > figcaption {
+  font-size: 1rem;
+  text-align: right;
+  font-style: italic;
+  opacity: 0.6;
+}
+
+@media only screen and (max-width: 1600px) {
+  #text-container {
+    margin: 10vh 20vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  #text-container {
+    margin: 10vh 5vw;
+  }
+}
+
+:root {
+  --telescope-highlight: #95abe655;
+  --telescope-highlight-hover: #95abe699;
+  --telescope-text-color: #1f2021;
+}
+
+hr {
+  visibility: hidden;
+}
+
+.signoff {
+  font-size: 1rem;
+}
