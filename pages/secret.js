@@ -9,7 +9,6 @@ export default function Secret({ jwt }) {
       jwt = jwt.slice(0, -1);
     }
     if (jwt.split(".").length <= 2) {
-      console.log(JSON.parse(atob(jwt.split(".")[0])))
       if (JSON.parse(atob(jwt.split(".")[0])).alg == "none") {
         hasAccess = JSON.parse(atob(jwt.split(".")[1])).hasAccess;
       }
