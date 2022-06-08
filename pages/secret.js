@@ -4,14 +4,12 @@ const privateKey =
 
 export default function Secret({ jwt }) {
   let hasAccess = false;
-
-  // remove period at the end of the jwt
   try {
     if (jwt.endsWith(".")) {
       jwt = jwt.slice(0, -1);
     }
-
     if (jwt.split(".").length <= 2) {
+      console.log(JSON.parse(atob(jwt.split(".")[0])))
       if (JSON.parse(atob(jwt.split(".")[0])).alg == "none") {
         hasAccess = JSON.parse(atob(jwt.split(".")[1])).hasAccess;
       }
@@ -21,23 +19,17 @@ export default function Secret({ jwt }) {
   } catch (err) {
     hasAccess = false;
   }
-
   if (hasAccess) {
     return (
       <div id="text-container">
-        <h1>Assemble ✨</h1>
-        <figure>
-          <img src="./gzooks.jpeg" alt="The golden gate bridge at night" />
-          <figcaption>📍 San Francisco, CA, July 29th-31st</figcaption>
-        </figure>
+        <h1>ASSEMBLE</h1>
         <p>
-          Hello Hack Clubbers! We{`'`}re super excited to annouce that our event
-          for this summer is going to be Assemble, an IRL hackathon in SF at
-          Figma HQ???? Insert longer and more thoughtful message
+          Message <b>@sampoder</b>: <i>"✨ Assemble!"</i>.
         </p>
-        <p className="signoff">
-          – The Assemble Team (add signatures like zephyr)
-        </p>
+        <figure>
+          <img src="./gzooks.jpeg" alt="The Golden Gate Bridge at night." />
+          <figcaption>📍 San Francisco, CA</figcaption>
+        </figure>
       </div>
     );
   } else {

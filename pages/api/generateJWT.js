@@ -5,17 +5,15 @@ const privateKey =
 export default function handler(req, res) {
   let password = req.query.password;
   let token;
-
-  if (
-    password ===
-    "assemble is a hackathon in SF this summer for 150 hack clubbers and you totally should do it"
-  ) {
+  let hasAccess = false;
+  if (password === "assemble") {
     token = jwt.sign(
       {
         hasAccess: true,
       },
       privateKey
     );
+    hasAccess = true;
   } else {
     token = jwt.sign(
       {
@@ -24,8 +22,7 @@ export default function handler(req, res) {
       privateKey
     );
   }
-
-  res.body = { token };
+  res.body = { token, hasAccess };
   res.setHeader("Content-Type", "application/json");
   res.status(200).json(res.body);
 }
