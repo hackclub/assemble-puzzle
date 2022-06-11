@@ -20,15 +20,32 @@ export default function Secret({ jwt }) {
   }
   if (hasAccess) {
     return (
-      <div id="text-container">
-        <h1>ASSEMBLE</h1>
+      <div id="text-container" class="shadow">
+        <a href="./gzooks.jpeg">
+          <figure>
+            {/* TODO: Add everyone's signature ontop of the photo */}
+            <img src="./gadzooks.png" alt="The Golden Gate Bridge at night." />
+            <figcaption>📍 San Francisco, CA</figcaption>
+          </figure>
+        </a>
         <p>
-          Message <b>@sampoder</b>: <i>"✨ Assemble!"</i>.
+          Dear Hack Clubber,
         </p>
-        <figure>
-          <img src="./gzooks.jpeg" alt="The Golden Gate Bridge at night." />
-          <figcaption>📍 San Francisco, CA</figcaption>
-        </figure>
+        <p>
+          You found us, haven’t you? You probably had to poke around to get here. Maybe you saw the bug immediately. Maybe it took some time. Perhaps you even had help from someone.
+        </p>
+        <p>
+          Now that you’ve made it, please don’t spoil the fun! You can share that you got in, and our postcard, but this letter is just between us. If you still want to be involved, you should offer a hand in the slack and share your wisdom to anyone looking for help to also reach this page.
+        </p>
+        <p>
+          With that out of the way, we’re super excited to announce that our event for this summer is going to be Assemble, an IRL hackathon in SF. This is an event put on by Hack Clubbers, a gift from us, to us. We appreciate the funding Hack Club HQ is giving, and we’re going to show them how far we can go with it.
+        </p>
+        <p>
+          Thank you so much for finding us. We’ll be in touch,
+        </p>
+        <p>
+          - The Assemble Team
+        </p>
       </div>
     );
   } else {

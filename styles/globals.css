@@ -64,12 +64,19 @@ a {
 
 #text-container {
   font-size: 1.7rem;
+  /* background-color:rgba(0, 0, 0, 0.4); */
+  padding: 1em;
+  /* background-color: bisque; */
+  background-color: #e8e0dc;
 }
 
 img {
   width: 100%;
   border-radius: 2px;
-  border: 2px solid #1c1716;
+  /* border: 2px solid #1c1716; */
+}
+
+.shadow {
   box-shadow: 5px 5px 41px 11px rgba(0, 0, 0, 0.4);
 }
 
