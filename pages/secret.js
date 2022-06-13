@@ -52,7 +52,7 @@ export default function Secret({ jwt }) {
     );
   } else {
     useEffect(() => {
-      alert("ACCESS DENIED")
+      setTimeout(() => alert("ACCESS DENIED"), 200)
     }, [])
     
     return (
