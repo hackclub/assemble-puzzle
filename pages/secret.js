@@ -1,3 +1,5 @@
+import { useEffect } from 'react'
+
 const secret = require("jsonwebtoken");
 const privateKey =
   "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExv";
@@ -49,6 +51,10 @@ export default function Secret({ jwt }) {
       </div>
     );
   } else {
+    useEffect(() => {
+      alert("ACCESS DENIED")
+    }, [])
+    
     return (
       <div>
         <video
