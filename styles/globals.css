@@ -53,6 +53,14 @@ main {
   color: white;
 }
 
+
+body {
+  /* TODO: This would be *so cool* to parallax */
+  background-image: url('../public/golden_coast.png');
+  background-size: cover;
+  background-repeat: repeat;
+}
+
 a {
   color: inherit;
 }
