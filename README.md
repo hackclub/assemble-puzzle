@@ -1,34 +1,8 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Assemble Reveal Hunt
 
-## Getting Started
+This is the final step in the clues leading to the Assemble reveal letter. Here's a brief walkthrough of all clues:
 
-First, run the development server:
-
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. The black/white flashing text in the video signals a morse code pattern which translates to `g0ld3n` (watch it at 0.25x speed).
+2. Open the ;-) PNG image in a text editor and scroll to the bottom, you’ll find the base64 string `U2FsdGVkX19lz81oH05ZO6Ye0idjNeC9rRsN0eQ5RnQKPxzyf3ygw+tb1SlLbWC0`.
+3. This string is encrypted using AES-256 with OpenSSL’s key derivation. (We’re open to other ways to encrypt this that will be easier to figure out). Running `echo "U2FsdGVkX19lz81oH05ZO6Ye0idjNeC9rRsN0eQ5RnQKPxzyf3ygw+tb1SlLbWC0" | openssl enc -d -base64 -aes-256-cbc -k g0ld3n` should decrypt the string to https://shhhhhhhh.hackclub.dev/.
+4. Enter any arbitrary password on this website and it will pass a JWT in the URL query string (very secure, we know). The trick here is to exploit JWT's `none` algorithm to grant the viewer access to the letter. You can do this by going to https://token.dev, pasting the JWT, changing `hasAccess` to `true` and `alg` to `none`. Then, paste the modified JWT (with the signature removed) back into the secret URL to access the letter.
