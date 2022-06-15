@@ -35,7 +35,7 @@ export default function Secret({ jwt }) {
         </p>
         <p>
           You found us, haven’t you? You probably had to poke around to get
-          here. Maybe you saw the bug immediately. Maybe it took some time.
+          here. Maybe you saw the clues immediately. Maybe it took some time.
           Perhaps you even had help from someone.
         </p>
         <p>
