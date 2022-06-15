@@ -1,11 +1,7 @@
-<<<<<<< HEAD
 import { useEffect, useState } from 'react'
 import mdLetter from '../letter.md'
 import ReactMarkdown from 'react-markdown'
-=======
-import { useEffect } from 'react'
 import Signature from '../components/signature';
->>>>>>> fb8332d2ac9aa3ceda28f4d07239db888318929e
 
 const secret = require("jsonwebtoken");
 const privateKey =
