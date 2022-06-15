@@ -12,11 +12,11 @@ const SIGNATURES = {
   "benjamin": "bashbaugh",
   "charlie": "tetraoxygen",
   "ella": "exu3",
-  "hugo": "tetraoxygen",
-  "ian": "tetraoxygen",
-  "ishan": "tetraoxygen",
-  "pranav": "tetraoxygen",
-  "sam": "tetraoxygen",
+  "hugo": "Hugoyhu",
+  "ian": "YodaLightsabr",
+  "ishan": "quackduck",
+  "pranav": "pranavnt",
+  "sam": "sampoder",
 }
 
 // Use a custom renderer so that we can include image in Markdown and avoid anything being leaked
