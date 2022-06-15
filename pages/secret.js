@@ -40,7 +40,7 @@ export default function Secret({ jwt }) {
           Now that you’ve made it, please don’t spoil the fun! You can share that you got in, and our postcard, but this letter is just between us. If you still want to be involved, you should offer a hand in the slack and share your wisdom to anyone looking for help to also reach this page.
         </p>
         <p>
-          With that out of the way, we’re super excited to announce that our event for this summer is going to be Assemble, an IRL hackathon in SF. This is an event put on by Hack Clubbers, a gift from us, to us. We appreciate the funding Hack Club HQ is giving, and we’re going to show them how far we can go with it.
+          With that out of the way, we’re super excited to announce that our event for this summer is going to be Assemble, an IRL hackathon in SF in early August. This is an event put on by Hack Clubbers, a gift from us, to us. We appreciate the funding Hack Club HQ is giving, and we’re going to show them how far we can go with it.
         </p>
         <p>
           Thank you so much for finding us. We’ll be in touch,
