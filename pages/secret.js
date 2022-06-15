@@ -7,6 +7,18 @@ const secret = require("jsonwebtoken");
 const privateKey =
   "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExv";
 
+const SIGNATURES = {
+  "belle": "bellesea",
+  "benjamin": "bashbaugh",
+  "charlie": "tetraoxygen",
+  "ella": "exu3",
+  "hugo": "tetraoxygen",
+  "ian": "tetraoxygen",
+  "ishan": "tetraoxygen",
+  "pranav": "tetraoxygen",
+  "sam": "tetraoxygen",
+}
+
 // Use a custom renderer so that we can include image in Markdown and avoid anything being leaked
 const renderers = {
   img: ({
@@ -24,7 +36,7 @@ const renderers = {
   ),
 };
 
-export default function Secret({ hasAccess, letterContent }) {
+export default function Secret({ hasAccess, letterContent, signatures }) {
   // Doing this to avoid Next hydration error from md component, which shouldn't be happening
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -35,6 +47,10 @@ export default function Secret({ hasAccess, letterContent }) {
     return loaded ? (
       <div id="text-container" class="shadow">
         <ReactMarkdown components={renderers} children={letterContent} />
+
+        {
+          Object.entries(signatures).map(([name, gh]) => <Signature src={`signatures/${name}.png`} href={`https://github.com/${gh}`} />)
+        }
       </div>
     ) : 'gadzooks';
   } else {
@@ -84,6 +100,7 @@ export function getServerSideProps (ctx) {
     props: {
       hasAccess,
       letterContent: hasAccess ? mdLetter : '',
+      signatures: SIGNATURES,
     },
   }
 }
