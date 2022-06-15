@@ -53,6 +53,12 @@ main {
   color: white;
 }
 
+
+body {
+  background-image: url('../public/golden_coast.png');
+  background-size: cover;
+  background-repeat: repeat;
+}
 a {
   color: inherit;
 }
