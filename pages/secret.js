@@ -47,11 +47,11 @@ export default function Secret({ jwt }) {
         </p>
         <p>
           With that out of the way, we’re super excited to share some news with
-          you: we're organizing Assemble, <strong>an IRL hackathon in SF from 5th-7th of
-          August</strong>. Around 150 attendees will join us– fellow Hack Clubbers, new
-          high schoolers outside the community, and <a
-          href="https://hackclub.com/amas#past-amas">some previous AMA
-          guests</a>.
+          you: we're organizing Assemble, <strong>an IRL hackathon in San
+          Francisco from 5th-7th of August</strong>. Around 150 attendees will
+          join us– fellow Hack Clubbers, new high schoolers outside the
+          community, and <a href="https://hackclub.com/amas#past-amas">some
+          previous AMA guests</a>.
         </p>
         <p>We're still locking in the final logistics before we share this
         publicly, so stay tuned for the official post going out in the{' '}
