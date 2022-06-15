@@ -23,7 +23,7 @@ export default function Secret({ jwt }) {
   if (hasAccess) {
     return (
       <div id="text-container" class="shadow">
-        <a href="./gzooks.jpeg">
+        <a href="./gzooks.jpeg" className='decoration-none'>
           <figure>
             {/* TODO: Add everyone's signature ontop of the photo */}
             <img src="./gadzooks.png" alt="The Golden Gate Bridge at night." />
@@ -39,25 +39,23 @@ export default function Secret({ jwt }) {
           Perhaps you even had help from someone.
         </p>
         <p>
-          Now that you’ve made it, please don’t spoil the fun! You can share
-          that you got in, and our postcard, but this letter is just between us.
-          If you still want to be involved, you should offer a hand in the slack
-          and share your wisdom to anyone looking for help to also reach this
-          page.
+          Now that you’ve made it please don’t spoil the fun! You can share
+          that you got our message and our postcard above, but the content of
+          this letter is just between us.  If you still want to be involved, you
+          should offer a hand in the Slack and share your wisdom with someone
+          looking for help to also reach this page.
         </p>
         <p>
           With that out of the way, we’re super excited to share some news with
-          you: we're organizing Assemble, an IRL hackathon in SF from 5th-7th of
-          August. Around 150 attendees will join us– fellow Hack Clubbers, new
+          you: we're organizing Assemble, <strong>an IRL hackathon in SF from 5th-7th of
+          August</strong>. Around 150 attendees will join us– fellow Hack Clubbers, new
           high schoolers outside the community, and <a
           href="https://hackclub.com/amas#past-amas">some previous AMA
-          guests</a>. This is an event put on by Hack Clubbers, a gift from us,
-          to you. We appreciate the funding Hack Club HQ is giving, and we’re
-          going to show them how far we can go with it.
+          guests</a>.
         </p>
         <p>We're still locking in the final logistics before we share this
-        publicly, so stay tuned for the official post going out in the
-        #announcements channel late next week.</p>
+        publicly, so stay tuned for the official post going out in the{' '}
+        <a href="https://app.slack.com/client/T0266FRGM/C0266FRGT">#announcements</a> channel late next week.</p>
         <p>
           Thank you so much for finding us. We’ll be in touch,
         </p>
