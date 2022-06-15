@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import Signature from '../components/signature';
 
 const secret = require("jsonwebtoken");
 const privateKey =
@@ -25,7 +26,6 @@ export default function Secret({ jwt }) {
       <div id="text-container" class="shadow">
         <a href="./gzooks.jpeg" className='decoration-none'>
           <figure>
-            {/* TODO: Add everyone's signature ontop of the photo */}
             <img src="./gadzooks.png" alt="The Golden Gate Bridge at night." />
             <figcaption>📍 San Francisco, CA</figcaption>
           </figure>
@@ -62,6 +62,16 @@ export default function Secret({ jwt }) {
         <p>
           - The Assemble Team
         </p>
+
+          <Signature src="signatures/belle.png" href="https://github.com/bellesea" />
+          <Signature src="signatures/benjamin.png" href="https://github.com/bashbaugh" />
+          <Signature src="signatures/charlie.png" href="https://github.com/tetraoxygen" />
+          <Signature src="signatures/ella.png" href="https://github.com/exu3" />
+          <Signature src="signatures/hugo.png" href="https://github.com/tetraoxygen" />
+          <Signature src="signatures/ian.png" href="https://github.com/tetraoxygen" />
+          <Signature src="signatures/ishan.png" href="https://github.com/tetraoxygen" />
+          <Signature src="signatures/pranav.png" href="https://github.com/tetraoxygen" />
+          <Signature src="signatures/sam.png" href="https://github.com/tetraoxygen" />
       </div>
     );
   } else {
