@@ -1,32 +1,28 @@
-import { useEffect, useState } from 'react'
-import mdLetter from '../letter.md'
-import ReactMarkdown from 'react-markdown'
-import Signature from '../components/signature';
+import { useEffect, useState } from "react";
+import mdLetter from "../letter.md";
+import ReactMarkdown from "react-markdown";
+import Signature from "../components/signature";
 
 const secret = require("jsonwebtoken");
 const privateKey =
   "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExv";
 
 const SIGNATURES = {
-  "belle": "bellesea",
-  "benjamin": "bashbaugh",
-  "charlie": "tetraoxygen",
-  "ella": "exu3",
-  "hugo": "Hugoyhu",
-  "ian": "YodaLightsabr",
-  "ishan": "quackduck",
-  "pranav": "pranavnt",
-  "sam": "sampoder",
-}
+  belle: "bellesea",
+  benjamin: "bashbaugh",
+  charlie: "tetraoxygen",
+  ella: "exu3",
+  hugo: "Hugoyhu",
+  ian: "YodaLightsabr",
+  ishan: "quackduck",
+  pranav: "pranavnt",
+  sam: "sampoder",
+};
 
 // Use a custom renderer so that we can include image in Markdown and avoid anything being leaked
 const renderers = {
-  img: ({
-      alt,
-      src,
-      title,
-  }) => (
-    <a href={`/${src}.jpeg`} className='decoration-none'>
+  img: ({ alt, src, title }) => (
+    <a href={`/${src}.jpeg`} className="decoration-none">
       <figure>
         {/* TODO: Add everyone's signature ontop of the photo */}
         <img src={`/${src}.png`} alt={alt} />
@@ -40,45 +36,55 @@ export default function Secret({ hasAccess, letterContent, signatures }) {
   // Doing this to avoid Next hydration error from md component, which shouldn't be happening
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
-    setLoaded(true)
-  }, [])
+    setLoaded(true);
+  }, []);
 
   if (hasAccess) {
     return loaded ? (
-      <div id="text-container" class="shadow">
-        <ReactMarkdown components={renderers} children={letterContent} />
+      <div class="container">
+        <img src="/golden_coast.png" class="bg" />
+        <div id="text-container" class="shadow">
+          <ReactMarkdown components={renderers} children={letterContent} />
 
-        {
-          Object.entries(signatures).map(([name, gh]) => <Signature src={`signatures/${name}.png`} href={`https://github.com/${gh}`} />)
-        }
+          {Object.entries(signatures).map(([name, gh]) => (
+            <Signature
+              src={`signatures/${name}.png`}
+              href={`https://github.com/${gh}`}
+            />
+          ))}
+        </div>
       </div>
-    ) : 'gadzooks';
+    ) : (
+      "gadzooks"
+    );
   } else {
     useEffect(() => {
-      setTimeout(() => alert("ACCESS DENIED"), 200)
-    }, [])
-    
+      setTimeout(() => alert("ACCESS DENIED"), 0);
+    }, []);
+
     return (
-      <div>
-        <video
-          autoPlay
-          loop
-          controls={false}
-          muted
-          id="myVideo"
-          style={{
-            height: "100vh",
-            width: "100vw",
-          }}
-        >
-          <source src="/dinoed.mp4" type="video/mp4" />
-        </video>
+      <div class="vidContainer">
+        <div>
+          <video
+            autoPlay
+            loop
+            controls={false}
+            muted
+            id="myVideo"
+            style={{
+              height: "100vh",
+              width: "100vw",
+            }}
+          >
+            <source src="/dinoed.mp4" type="video/mp4" />
+          </video>
+        </div>
       </div>
     );
   }
 }
 
-export function getServerSideProps (ctx) {
+export function getServerSideProps(ctx) {
   let jwt = ctx.query.jwt || "";
   let hasAccess = false;
   try {
@@ -99,8 +105,8 @@ export function getServerSideProps (ctx) {
   return {
     props: {
       hasAccess,
-      letterContent: hasAccess ? mdLetter : '',
+      letterContent: hasAccess ? mdLetter : "",
       signatures: SIGNATURES,
     },
-  }
+  };
 }
