@@ -3,10 +3,6 @@ import mdLetter from '../letter.md'
 import ReactMarkdown from 'react-markdown'
 import Signature from '../components/signature';
 
-const secret = require("jsonwebtoken");
-const privateKey =
-  "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExv";
-
 const SIGNATURES = {
   "belle": "bellesea",
   "benjamin": "bashbaugh",
@@ -36,7 +32,7 @@ const renderers = {
   ),
 };
 
-export default function Secret({ hasAccess, letterContent, signatures }) {
+export default function Secret({ hasAccess, errorMessage, letterContent, signatures }) {
   // Doing this to avoid Next hydration error from md component, which shouldn't be happening
   const [loaded, setLoaded] = useState(false);
   useEffect(() => {
@@ -55,7 +51,7 @@ export default function Secret({ hasAccess, letterContent, signatures }) {
     ) : 'gadzooks';
   } else {
     useEffect(() => {
-      setTimeout(() => alert("ACCESS DENIED"), 200)
+      setTimeout(() => alert(errorMessage || 'ACCESS DENIED'), 500)
     }, [])
     
     return (
@@ -81,26 +77,36 @@ export default function Secret({ hasAccess, letterContent, signatures }) {
 export function getServerSideProps (ctx) {
   let jwt = ctx.query.jwt || "";
   let hasAccess = false;
+  let errorMessage = 'ACCESS DENIED';
   try {
     if (jwt.endsWith(".")) {
       jwt = jwt.slice(0, -1);
     }
-    if (jwt.split(".").length <= 2) {
-      if (JSON.parse(atob(jwt.split(".")[0])).alg == "none") {
-        hasAccess = JSON.parse(atob(jwt.split(".")[1])).hasAccess;
+    hasAccess = JSON.parse(atob(jwt.split(".")[1])).hasAccess;
+
+    if (hasAccess === true) {
+      const alg = JSON.parse(atob(jwt.split(".")[0])).alg
+      if (jwt.split(".").length <= 2 && alg == "none") {
+        // Pass
+      } else {
+        hasAccess = false;
+        errorMessage = `ACCESS DENIED :: ${alg} signature invalid :: rfc7518 3.1`;
       }
     } else {
       hasAccess = false;
+      errorMessage = 'ACCESS DENIED :: token unauthorized';
     }
   } catch (err) {
+  errorMessage = "ACCESS DENIED :: INVALID JWT";
     hasAccess = false;
   }
 
   return {
     props: {
       hasAccess,
+      errorMessage: hasAccess ? '' : errorMessage,
       letterContent: hasAccess ? mdLetter : '',
-      signatures: SIGNATURES,
+      signatures: hasAccess && SIGNATURES,
     },
   }
 }

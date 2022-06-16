@@ -1,6 +1,6 @@
 const jwt = require("jsonwebtoken");
 const privateKey =
-  "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExv";
+  "ginKjqrRLtrvEzgRs7s3dT5J70ZXTbb8j0EGJeCZrtH5Ekz4gyQQkNBVpExp";
 
 export default function handler(req, res) {
   let password = req.query.password;
