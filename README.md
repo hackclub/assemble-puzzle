@@ -10,3 +10,5 @@ This codebase is the last few steps in a treasure hunt leading to the Assemble r
     - If you run `cat openssl.png`, the last line includes a base64 string
 1. After getting the clues above, users can run `echo $BASE_64_STRING | openssl enc -d -base64 -aes-256-cbc -k g0ld3n` to get the result `https://shhhhhhhh.hackclub.dev/`
 1. Enter any (or no) password on this website and it will pass a JWT in the URL query string (intentionally insecure). The trick here is to exploit JWT's `none` algorithm to grant the viewer access to the letter. You can do this by going to https://token.dev, pasting the JWT, changing `hasAccess` to `true` and `alg` to `none`. Then, paste the modified JWT (with the signature removed) back into the secret URL to access the letter.
+
+The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/secret?jwt=eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJoYXNBY2Nlc3MiOnRydWUsImlhdCI6MTY1NTMxODI5NH0), but you may get caught by the vercel visitor password if you're going through this before we launch (it's `assemblesecret`). TODO: we need to turn off that vercel password
