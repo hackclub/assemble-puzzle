@@ -62,9 +62,34 @@ The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/s
 
 ## Post-Mortem
 
+[@pranavnt](https://github.com/pranavnt):
+
+```
+TBD
+```
+
+[@quackduck](https://github.com/quackduck):
+
+```
+TBD
+```
+
+[@bashbaugh](https://github.com/bashbaugh):
+
+```
+TBD
+```
+
+[@maxwofford](https://github.com/maxwofford):
+
+```
+TBD
+```
+
 [@sampoder](https://github.com/sampoder):
 
 ```
 TBD
 ```
 
+🎉 Thanks for puzzling with us!
