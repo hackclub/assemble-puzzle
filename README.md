@@ -26,15 +26,15 @@ The puzzle was made up of three parts: the video, the image and the website. Her
 
 ### The Video
 
-Bash
+By @bashbaugh, TBD.
 
 ### The Image
 
-Ishan
+By @quackduck, TBD.
 
 ### The Website
 
-Pranav
+By @pranavnt, TBD.
 
 ## How You Can Solve The Puzzle
 
