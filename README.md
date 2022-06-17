@@ -81,7 +81,7 @@ The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/s
 [@sampoder](https://github.com/sampoder):
 
 
-> The puzzle was a big hit! It has brought a good amount of energy to the Slack around the event. People really enjoyed the technical challenge of it which was a big standout. Next time, we'll probably need more clues to solve (people are just too good)!
+> The puzzle was a big hit! It has brought a great amount of energy to the Slack around the event. People really enjoyed the technical challenge, which stood out to me. Next time, we'll probably need more clues to solve (people are just too good)!
 
 
 🎉 Thanks for puzzling with us!
