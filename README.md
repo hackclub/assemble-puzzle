@@ -18,7 +18,7 @@ Launches are a big part of every summer event. For example, to announce 2021's Z
 
 3. **Build long-lasting "hype".** It took about three hours for the first person to solve the puzzle. Then people kept working it for the next twenty-four hours. That's a lot longer than a five-minute video and made sure hackers kept talking about the event for hours.
 
-4. **Have fun!** Ultimately, hackathons are meant to be fun. And so are puzzles which makes the two a perfect match!
+4. **Have fun!** Ultimately, hackathons are meant to be fun. And so are puzzles which makes the two a perfect match.
 
 ## How We Created The Puzzle
 
@@ -40,15 +40,31 @@ Pranav
 
 Here's a brief walkthrough of all steps involved in cracking the puzzle:
 
-1. [A video](https://www.youtube.com/watch?v=QDrtD3UMA-s) (currently hosted on YT for this README) will be posted on @hackclub's twitter and in the #announcements channel by @orpheus
-    - The video mentions `#redacted` which is a Slack channel that we'll trigger @orpheus creates (TODO: we have to do this manually)
-    - The video flashes `#redacted` in morse code that translates to `g0ld3n`
-1. Users will go to #redacted in slack and find an image posted by @orpheus: ![](assets/openssl.png) _(openssl.png)_.
-    - The image's exif data says `cat`
-    - If you run `cat openssl.png`, the last line includes a base64 string
-1. After getting the clues above, users can run `echo $BASE_64_STRING | openssl enc -d -base64 -aes-256-cbc -k g0ld3n` to get the result `https://shhhhhhhh.hackclub.dev/`
-1. Enter any (or no) password on this website and it will pass a JWT in the URL query string (intentionally insecure). The trick here is to exploit JWT's `none` algorithm to grant the viewer access to the letter. You can do this by going to https://token.dev, pasting the JWT, changing `hasAccess` to `true` and `alg` to `none`. Then, paste the modified JWT (with the signature removed) back into the secret URL to access the letter.
+You'll start with [a video posted on @hackclub's Twitter](https://twitter.com/hackclub/status/1537556499223961600) as well as in the `#announcements` Slack channel.
 
-The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/secret?jwt=eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJoYXNBY2Nlc3MiOnRydWUsImlhdCI6MTY1NTMxODI5NH0)
+The video has two key pieces of information:
+
+- The video mentions `#come-together` which is a Slack channel.
+
+- The video flashes `#come-together` in morse code that translates to `g0ld3n`.
+
+In `#come-together`, you'll find an image posted by @orpheus: 
+
+[![A Winky Face Image](assets/openssl.png)](assets/openssl.png)
+
+The next step is to run `cat openssl.png` in your terminal. You'll find that the last line includes a base64 string. To point participants towards the `cat` command, the image's EXIF data reads `cat`.
+
+After getting the clues above, users can run `echo $BASE_64_STRING | openssl enc -d -base64 -aes-256-cbc -k g0ld3n` to get the result `https://shhhhhhhh.hackclub.dev/`
+
+On the website, if you enter any (or no) password it will pass a JWT in the URL query string (this is intentionally insecure). The trick here is to exploit JWT's `none` algorithm to grant the viewer access to the letter. You can do this by going to [token.dev](https://token.dev), pasting the JWT, changing `hasAccess` to `true` and `alg` to `none`. Then, paste the modified JWT (with the signature removed) back into the secret URL to access the letter.
+
+The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/secret?jwt=eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJoYXNBY2Nlc3MiOnRydWUsImlhdCI6MTY1NTMxODI5NH0).
 
 ## Post-Mortem
+
+[@sampoder](https://github.com/sampoder):
+
+```
+TBD
+```
+
