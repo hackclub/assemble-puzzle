@@ -22,9 +22,23 @@ Launches are a big part of every summer event. For example, to announce 2021's Z
 
 ## How We Created The Puzzle
 
+The puzzle was made up of three parts: the video, the image and the website. Here's how we made each of those.
+
+### The Video
+
+Bash
+
+### The Image
+
+Ishan
+
+### The Website
+
+Pranav
+
 ## How You Can Solve The Puzzle
 
-This codebase is the last few steps in a treasure hunt leading to the Assemble reveal letter. Here's a brief walkthrough of all steps in the treasure hunt:
+Here's a brief walkthrough of all steps involved in cracking the puzzle:
 
 1. [A video](https://www.youtube.com/watch?v=QDrtD3UMA-s) (currently hosted on YT for this README) will be posted on @hackclub's twitter and in the #announcements channel by @orpheus
     - The video mentions `#redacted` which is a Slack channel that we'll trigger @orpheus creates (TODO: we have to do this manually)
