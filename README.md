@@ -2,7 +2,7 @@
 
 <img width="1109" alt="Screenshot 2022-06-17 at 9 31 27 AM" src="https://user-images.githubusercontent.com/39828164/174321304-c79edc6f-6e9f-437f-b154-eadc86a52047.png">
 
-This summer (2022), we'll kick off a new renaissance by returning in-person high-school hackathons to San Francisco and consequently the rest of the world. Learn more here.
+This summer (2022), we'll kick off a new renaissance by returning in-person high-school hackathons to San Francisco and consequently the rest of the world. [Learn more here.](https://assemble.hackclub.com)
 
 Before the big announcement, however, we created a treasure hunt that would lead to the Assemble reveal letter. In this repository we run through why we created the puzzle, how we created the puzzle, how the puzzle can be solved and a post-mortem on the puzzle's success as a launch tool.
 
