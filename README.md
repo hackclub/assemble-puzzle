@@ -26,7 +26,7 @@ The puzzle was made up of three parts: the video, the image and the website. Her
 
 ### The Video
 
-By @bashbaugh, TBD.
+[This video](https://twitter.com/hackclub/status/1537556499223961600/video/1) was released on our Twitter on June 16. It was made by [@bashbaugh](https://github.com/bashbaugh) without video editing software using JavaScript and PIXI.js, with webGL shaders for the effects. The video opened with an image of the San Francisco bay and an [ASCII filter](https://github.com/pixijs/filters/tree/main/filters/ascii), with resolution slowly increasing until the bridge became visible. This was followed by a flashing text sequence (morse code) and finally, the words "end transmission". The goal was to make a short video to build hype before revealing the first clues - the Golden Gate bridge, `#come-together`, and the morse code sequence. You can find the video source in `clues/source`.
 
 ### The Image
 
@@ -48,9 +48,9 @@ The video has two key pieces of information:
 
 - The video flashes `#come-together` in morse code that translates to `g0ld3n`.
 
-In `#come-together`, you'll find an image posted by @orpheus: 
+In `#come-together`, you'll find an image posted by @orpheus:
 
-[![A Winky Face Image](assets/openssl.png)](assets/openssl.png)
+[![A Winky Face Image](clues/openssl.png)](assets/openssl.png)
 
 The next step is to run `cat openssl.png` in your terminal. You'll find that the last line includes a base64 string. To point participants towards the `cat` command, the image's EXIF data reads `cat`.
 
@@ -80,8 +80,6 @@ The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/s
 
 [@sampoder](https://github.com/sampoder):
 
-
 > The puzzle was a big hit! It has brought a great amount of energy to the Slack around the event. People really enjoyed the technical challenge, which stood out to me. Next time, we'll probably need more clues to solve (people are just too good)!
-
 
 🎉 Thanks for puzzling with us!
