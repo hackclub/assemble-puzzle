@@ -58,7 +58,7 @@ After getting the clues above, users can run `echo $BASE_64_STRING | openssl enc
 
 On the website, if you enter any (or no) password it will pass a JWT in the URL query string (this is intentionally insecure). The trick here is to exploit JWT's `none` algorithm to grant the viewer access to the letter. You can do this by going to [token.dev](https://token.dev), pasting the JWT, changing `hasAccess` to `true` and `alg` to `none`. Then, paste the modified JWT (with the signature removed) back into the secret URL to access the letter.
 
-The final URL with unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/secret?jwt=eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJoYXNBY2Nlc3MiOnRydWUsImlhdCI6MTY1NTMxODI5NH0).
+The final URL with an unlocked JWT token is [here](https://shhhhhhhh.hackclub.dev/secret?jwt=eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJoYXNBY2Nlc3MiOnRydWUsImlhdCI6MTY1NTMxODI5NH0).
 
 ## Post-Mortem
 
