@@ -62,24 +62,6 @@ The final URL with an unlocked JWT token is [here](https://shhhhhhhh.hackclub.de
 
 ## Post-Mortem
 
-[@pranavnt](https://github.com/pranavnt):
-
-> TBD
-
-[@quackduck](https://github.com/quackduck):
-
-> TBD
-
-[@bashbaugh](https://github.com/bashbaugh):
-
-> TBD
-
-[@maxwofford](https://github.com/maxwofford):
-
-> TBD
-
-[@sampoder](https://github.com/sampoder):
-
-> The puzzle was a big hit! It has brought a great amount of energy to the Slack around the event. People really enjoyed the technical challenge, which stood out to me. Next time, we'll probably need more clues to solve (people are just too good)!
+The puzzle was a big hit! It has brought a great amount of energy to the Slack around the event. People really enjoyed the technical challenge, which stood out to me. Next time, we'll probably need more clues to solve (people are just too good)!
 
 🎉 Thanks for puzzling with us!
