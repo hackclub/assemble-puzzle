@@ -40,11 +40,9 @@ One problem we encountered was that there are several different versions of Open
 That’s not all! The image also contained EXIF and PNG metadata (for example, the Author, Description, Copyright Notice etc. fields). We set all of these to “cat” to hint that people should run `cat openssl.png` and see the hidden messages.
 Try this command to see if you can decode the data too: `echo U2FsdGVkX19lz81oH05ZO6Ye0idjNeC9rRsN0eQ5RnQKPxzyf3ygw+tb1SlLbWC0= | openssl enc -d -base64 -aes-256-cbc -k g0ld3n`!
 
-\- Ishan
-
 ### The Website
 
-By @pranavnt, TBD.
+We built the website using Next.js and hosted it on Vercel (with their serverless functions). Check out the source in this repo!
 
 ## How You Can Solve The Puzzle
 
