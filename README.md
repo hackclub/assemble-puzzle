@@ -30,7 +30,17 @@ The puzzle was made up of three parts: the video, the image and the website. Her
 
 ### The Image
 
-By @quackduck, TBD.
+I knew earlier that the PNG spec allows for any arbitrary data to be [appended to the end of a PNG](https://stackoverflow.com/questions/61561983/how-to-extract-binary-data-appended-to-a-png-file) (no clue why tbh), so if I added any text (or base64), the PNG would still be valid and I would be able to hide a clue without changing the actual image pixels! I’ve used this before to add a lot of information to the end of a small 10x10 image so the file size was suspiciously large. In this puzzle, though, I added only a little data to make the puzzle harder ;-)
+
+Speaking of the data we added: it was a plaintext message saying “hmm. what are you looking here for?” (to show the reader they were on the right track), a newline, and then a base64-encoded AES-256 CBC encrypted message with OpenSSL’s default key derivation (`U2FsdGVkX19lz81oH05ZO6Ye0idjNeC9rRsN0eQ5RnQKPxzyf3ygw+tb1SlLbWC0=`). This is the most used form of encryption. The data was “https://shhhhhhhh.hackclub.dev/” and the password was g0ld3n (which you’d get from decoding the morse code blinking of the text in 
+Benjamin's video). 
+
+One problem we encountered was that there are several different versions of OpenSSL that have different key derivation algorithms, which means people may not be able to decode the data even if they had the right password. We decided to go with the algorithm that’s preinstalled on macOS.
+
+That’s not all! The image also contained EXIF and PNG metadata (for example, the Author, Description, Copyright Notice etc. fields). We set all of these to “cat” to hint that people should run `cat openssl.png` and see the hidden messages.
+Try this command to see if you can decode the data too: `echo U2FsdGVkX19lz81oH05ZO6Ye0idjNeC9rRsN0eQ5RnQKPxzyf3ygw+tb1SlLbWC0= | openssl enc -d -base64 -aes-256-cbc -k g0ld3n`!
+
+\- Ishan
 
 ### The Website
 
