@@ -42,7 +42,7 @@ Try this command to see if you can decode the data too: `echo U2FsdGVkX19lz81oH0
 
 ### The Website
 
-We built the website using Next.js and hosted it on Vercel (with their serverless functions). Check out the source in this repo!
+We built the website using Next.js and hosted it on Vercel (with their serverless functions). We used the `jsonwebtoken` JavaScript library to interact and generate JWTs. Check out the source in this repo!
 
 ## How You Can Solve The Puzzle
 
